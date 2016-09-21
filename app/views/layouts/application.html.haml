@@ -1,0 +1,17 @@
+!!!
+%html{lang: "en"}
+  %head
+    %meta{charset: "utf-8"}
+    %meta{name: "description", content: "Find out how w-8forms.com can help your teams stay on top of IRS Form W-8BEN, Form W-8BEN-E, Form W-8EXP, Form W-8IMY, or Form W-9. W-8 Compliance Made Easy. US tax forms. Collected. Seamlessly. Start with a FREE trial and start saving time today."}
+    %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
+    %link{href: "/assets/favicon.ico", rel: "shortcut icon"}
+    %title="W-8 Forms"
+    = stylesheet_link_tag "application"
+    = csrf_meta_tags
+
+  %body
+    = render "layouts/topbar"
+    = render "layouts/flash"
+    = yield
+    = render "layouts/footer"
+    = javascript_include_tag "application"

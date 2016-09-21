@@ -1,0 +1,19 @@
+
+#flash-container.large-3.small-centered.columns{style: "margin-top: 20px"}
+  - if flash[:notice]
+    .alert-box.info.radius{"data-alert"=> ""}
+      = flash[:notice]
+      %a.close{href: "#"} &times;
+      - flash[:notice] = nil
+
+  - if flash[:alert]
+    .alert-box.info.radius{"data-alert"=> ""}
+      = flash[:alert]
+      %a.close{href: "#"} &times;
+      - flash[:alert] = nil
+
+  - if flash[:error] && !flash[:error].empty?
+    .alert-box.info.radius{"data-alert" => ""}
+      = flash[:error]
+      %a.close{href: "#"} &times;
+      - flash[:error] = nil

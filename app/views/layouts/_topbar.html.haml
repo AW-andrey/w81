@@ -1,0 +1,22 @@
+
+-# .contain-to-grid.sticky
+.top-bar
+  .top-bar-title
+    %span{"data-responsive-toggle" => "responsive-menu", "data-hide-for" => "medium"}
+      %button.menu-icon.dark{"type" => "button", "data-toggle" => true}
+    %h3
+      %a{:href => "/"}
+        EXPAT
+        %i.fi-burst.icon{style: "color: #f03"} 
+        TAX
+  %div#responsive-menu   
+    .top-bar-right
+      %ul.menu
+        %li
+          %a{:href => "/explore"} EXPLORE
+        %li
+          %a{:href => "/pricing"} PRODUCTS & PRICING
+        %li
+          %a{:href => "/users/new"} GET STARTED
+        %li
+          %a{:href => "/sessions/new"} SIGN IN

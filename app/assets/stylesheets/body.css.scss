@@ -1,0 +1,76 @@
+.benefits{
+  margin-top: -5px;
+
+  hr{
+    width: 70%;
+    border: 1px solid white;
+  }
+  h5{
+    font-weight: 300;
+  }
+  p{
+    color: #666;
+    font-weight: 300;
+  }
+  .benefit{
+    margin-top: 30px;
+  }
+  
+  .icon{
+    font-size: 40px;
+    color: black;
+  }
+}      
+
+ul.pricing-table { 
+  margin-bottom: 0; 
+  .price { 
+    background: #f8f8f8;  
+  }
+  i { 
+    display: inline-block; 
+    margin-right: 5px; 
+    font-size: 1.4em;
+  } 
+}
+
+.recommended { 
+  box-shadow: 0 0 10px rgba(0,0,0,0.25); 
+  position: relative; 
+  z-index: 2; 
+}
+
+@media only screen and (min-width: 768px){
+  .left-side { 
+    border-right: none; 
+  }
+  .right-side { 
+    border-left: none; 
+  }
+}   
+
+
+.home-buttons {
+  overflow: auto;
+  /*background: #fff;*/
+  /*padding: 0.7em 0.4em;*/
+  max-width: 50em;
+  margin: 0 auto;
+  position: relative;
+  top: 2.6em;
+}
+
+.orbit-container {
+    overflow: visible !important;
+}
+.orbit-slides-container {
+    overflow: hidden !important;    
+}
+.orbit-container .orbit-prev {
+    margin-left: -50px;
+}
+.orbit-container .orbit-next {
+    margin-right: -50px;
+}
+
+    

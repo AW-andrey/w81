@@ -1,0 +1,19 @@
+.row{style: "padding-top: 50px;"}
+  .large-6.large-centered.columns
+    %form
+      .row.collapse
+        .small-2.columns
+          %span.prefix
+            %i.fi-mail{style: "font-size: 2em;"}
+        .small-10.columns
+          %input{placeholder:  "Email", type: "email"}
+      .row.collapse
+        .small-2.columns
+          %span.prefix
+            %i.fi-lock{style: "font-size: 2em;"}
+        .small-10.columns
+          %input{placeholder:  "Password", type: "password"}
+      .row.collapse
+        .large-12.large-centered.columns
+          %a.button{href: "#", style: "margin-left: 35%;"} 
+            LOGIN
