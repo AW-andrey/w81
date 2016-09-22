@@ -2,10 +2,13 @@
 %html{lang: "en"}
   %head
     %meta{charset: "utf-8"}
-    %meta{name: "description", content: "Find out how w-8forms.com can help your teams stay on top of IRS Form W-8BEN, Form W-8BEN-E, Form W-8EXP, Form W-8IMY, or Form W-9. W-8 Compliance Made Easy. US tax forms. Collected. Seamlessly. Start with a FREE trial and start saving time today."}
+    %meta{name: "description", content: "Find out how we can help you stay on top of IRS compliance and US tax return filing requirements. US tax compliance and US expatriation and giving up your US citizenship made easy. US tax returns and forms. Filed. Seamlessly. Start saving time and taxes today."}
     %meta{name: "viewport", content: "width=device-width, initial-scale=1.0"}
     %link{href: "/assets/favicon.ico", rel: "shortcut icon"}
-    %title="W-8 Forms"
+
+    = display_meta_tags(:title => "TAXEXP.AT - Expatriation US Tax Expert")
+    = render "layouts/meta"
+
     = stylesheet_link_tag "application"
     = csrf_meta_tags
 

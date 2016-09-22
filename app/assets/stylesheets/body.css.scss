@@ -1,8 +1,42 @@
+.top-bar {
+  .top-bar-title {
+    h3{
+      a{
+        color: white;
+        font-weight: bold;
+        .icon{
+          color: #f03
+        } 
+      }
+    }
+  }
+}
+
+.banner-top{
+  .row{
+    .columns{
+      h1{
+        font-family: 'Roboto Condensed', sans;
+        font-size: 3.5em; 
+        padding-top:30px; 
+        font-weight: bold; 
+        line-height: 1em;
+      }      
+    }
+  }
+  .row{
+    padding-top:30px;
+  }
+}
+
 .benefits{
-  margin-top: -5px;
+
+  background: #ffd707; 
+  padding-top:50px;
+  padding-bottom:40px;
 
   hr{
-    width: 70%;
+    width: 90%;
     border: 1px solid white;
   }
   h5{
@@ -21,6 +55,24 @@
     color: black;
   }
 }      
+
+.banner-bottom{
+  .row{
+    padding-top: 50px;
+    padding-bottom:50px;
+    .columns{
+      h1{
+        font-family: 'Roboto Condensed', sans;
+        font-size: 3.5em; 
+        padding-top:30px;
+        font-weight: bold;
+        line-height: 1em;
+      }
+    }
+  }
+
+}
+
 
 ul.pricing-table { 
   margin-bottom: 0; 

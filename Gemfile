@@ -36,6 +36,7 @@ gem "haml-rails"
 gem 'foundation-icons-sass-rails'
 # gem 'pg'
 gem 'gibbon'
+gem 'meta-tags'
 
 
 group :development, :test do

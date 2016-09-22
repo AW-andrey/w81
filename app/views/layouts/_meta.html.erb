@@ -1,0 +1,34 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<%= raw display_meta_tags :viewport => 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' %>
+
+<%= raw display_meta_tags :keywords => "US tax, IRS, delinquent US tax returns, expatriation, FATCA, Streamlined Foreign Offshore Procedures, Streamlined Filing Compliance Procedures for U.S. Taxpayers" %>
+<%= raw display_meta_tags :description => "US tax returns and giving up your US citizenship. Done. Seamlessly." %>
+
+<%= raw display_meta_tags :og => {
+  :title		=> "TAXEXP.AT - Expatriation US Tax Expert",
+  :description	=> "We are US tax experts making it simple for people to comply with their US tax return filing and payment obligations and to relinquish their US citizenship by expatriating",
+  :site_name	=> "TAXEXP.AT - Expatriation US Tax Expert",
+  :locale		=> 'en_GB',
+  :type			=> 'business.business',
+  :url 			=> request.original_url
+} %>
+
+<%= raw display_meta_tags :twitter => {
+  :card				=> "summary",
+  :site 			=> "@TAXEXPAT",
+  :title			=> "TAXEXP.AT - Expatriation US Tax Expert",
+  :description 		=> "We are US tax experts making it simple for people to comply with their US tax return filing and payment obligations and to relinquish their US citizenship by expatriating",
+  :creator			=> "@TAXEXPAT",
+  :domain			=> request.host
+} %>
+
+<script type="application/ld+json">
+{ "@context" : "http://schema.org",
+  "@type" : "Organization",
+  "name" : "TAXEXP.AT - Expatriation US Tax Expert",
+  "url" : "<%= request.original_url %>",
+  "sameAs" : <%= raw({:FACEBOOK => 'https://www.facebook.com/TAXEXPAT', :TWITTER => 'https://twitter.com/TAXEXPAT', :LINKEDIN => 'https://www.linkedin.com/company/TAXEXPAT', :GOOGLE_PLUS => 'https://plus.google.com/b/100487378953223210896/100487378953223210896', :YOUTUBE => 'https://www.youtube.com/channel/UCeg9lkTmhu2bnBTVldQMx8A', :INSTAGRAM => 'https://instagram.com/TAXEXPAT'}.values.to_json) %>
+}
+</script>
