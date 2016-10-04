@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   end
 
   def mailchimp_register(name, email)
-  	gb = Gibbon::API.new
+  	gb = Gibbon::Request.new
     begin
 
     	gb.lists.subscribe({:id => ENV['MAILCHIMP_LIST_ID'], 
@@ -22,7 +22,7 @@ class UsersController < ApplicationController
   		flash[:error] = error
       redirect_to new_user_path
     else
-      flash[:notice] = "Succesfully registered"
+      flash[:notice] = "Message sent succesfully"
       redirect_to new_user_path
 		end
       

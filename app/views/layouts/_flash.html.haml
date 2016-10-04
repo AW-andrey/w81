@@ -1,19 +1,25 @@
 
 #flash-container.large-3.small-centered.columns{style: "margin-top: 20px"}
   - if flash[:notice]
-    .alert-box.info.radius{"data-alert"=> ""}
+    .success.callout{"data-closable"=> ""}
       = flash[:notice]
-      %a.close{href: "#"} &times;
+      %button.close-button{"aria-label" => "Dismiss alert", "type" => "button", "data-close"=> ""} 
+        %span{"aria-hidden" => "true"}
+          &times;
       - flash[:notice] = nil
 
   - if flash[:alert]
-    .alert-box.info.radius{"data-alert"=> ""}
+    .callout{"data-closable"=> ""}
       = flash[:alert]
-      %a.close{href: "#"} &times;
+      %button.close-button{"aria-label" => "Dismiss alert", "type" => "button", "data-close"=> ""} 
+        %span{"aria-hidden" => "true"}
+          &times;
       - flash[:alert] = nil
 
   - if flash[:error] && !flash[:error].empty?
-    .alert-box.info.radius{"data-alert" => ""}
+    .callout{"data-closable"=> ""}
       = flash[:error]
-      %a.close{href: "#"} &times;
+      %button.close-button{"aria-label" => "Dismiss alert", "type" => "button", "data-close"=> ""} 
+        %span{"aria-hidden" => "true"}
+          &times;
       - flash[:error] = nil
