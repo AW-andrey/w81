@@ -8,14 +8,15 @@ class UsersController < ApplicationController
   end
 
   def mailchimp_register(name, email)
-  	gb = Gibbon::Request.new
+  	gb = Gibbon::Request.new(api_key: ENV['MAILCHIMP_API_KEY'])
     begin
 
-    	gb.lists.subscribe({:id => ENV['MAILCHIMP_LIST_ID'], 
-          :email => {:email => email}, 
-          :merge_vars => {:FNAME => name},
+    	gb.lists.members.create(body: {
+          :email_address => email, 
+          :status => "subscribed", 
+          :merge_fields => {FNAME: name},
           :double_optin => false,
-        	:send_welcome => true})
+          :send_welcome => true})
 
 		rescue Gibbon::MailChimpError => e
       error = e.code == 214 ? "#{email} is already subscribed" : e.message
