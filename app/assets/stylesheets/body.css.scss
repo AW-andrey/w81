@@ -202,16 +202,16 @@
 }
 
 
-ul.pricing-table { 
-  margin-bottom: 0; 
-  .price { 
-    background: #f8f8f8;  
+.pricing {
+  .row .columns{
+    h1{
+      font-family: 'Roboto Condensed', sans; 
+      font-size: 3.5em; 
+      padding:30px 0px; 
+      font-weight: bold; 
+      line-height: 1em;
+    }
   }
-  i { 
-    display: inline-block; 
-    margin-right: 5px; 
-    font-size: 1.4em;
-  } 
 }
 
 .recommended { 

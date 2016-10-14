@@ -1,38 +1,56 @@
-.row
-  .large-7.large-centered.columns{style: "padding-top: 50px;"}
-    %h1 Get in touch.
-    %h4{style: "padding-bottom: 30px;"} Please provide your preferred contact details and we'll reach out within 24 hours to help you through the on-boarding process. 
+.new
   .row
-    .large-6.large-centered.columns
-      = form_tag('/users/create') do
+    .large-7.large-centered.columns{style: "padding-top: 50px;"}
+      %h1 Get in touch.
+      %h4{style: "padding-bottom: 30px;"} 
+        Call us:
+        %br
+        %i.fi-telephone{style: "font-size: 1.3em;"}
+        020 7353 7884 
+      %h4{style: "padding-bottom: 30px;"} Alternatively, please provide your preferred contact details and we will reach out within 24 hours to help you. 
+    .row
+      .large-6.large-centered.columns
+        = form_tag('/users/create') do
+          .row.collapse
+            .small-2.columns
+              %span.prefix
+                %i.fi-torso{style: "font-size: 2em;"}
+            .small-10.columns
+              = text_field_tag :name, nil, :placeholder => "Name", :required => true
+          .row.collapse
+            .small-2.columns
+              %span.prefix
+                %i.fi-telephone{style: "font-size: 2em;"}
+            .small-10.columns
+              = telephone_field_tag :phone, nil, :placeholder => "Telephone", :required => true
+          .row.collapse
+            .small-2.columns
+              %span.prefix
+                %i.fi-mail{style: "font-size: 2em;"}
+            .small-10.columns
+              = email_field_tag :email, nil, :placeholder => "Email", :required => true
+          .row.collapse
+            .small-2.columns
+              %span.prefix
+                %i.fi-web{style: "font-size: 2em;"}
+            .small-10.columns
+              = text_field_tag :country, nil, :placeholder => "Current country of residence", :required => true
+          .row.collapse
+            .small-2.columns
+              %span.prefix
+                %i.fi-address-book{style: "font-size: 2em;"}
+            .small-10.columns
+              = select_tag :contact, options_for_select([ "Email", "Phone" ]), :required => true, prompt: "Best method to contact"
+          .row.collapse
+            .small-2.columns
+              %span.prefix
+                %i.fi-page-edit{style: "font-size: 2em;"}
+            .small-10.columns
+              = text_area_tag :message, nil, :placeholder => "Details", :size => "24x6", :required => true
+          .row.collapse
+            .large-12.large-centered.columns
+              = submit_tag "CONTACT ME", :class => "button large", :style => "margin-left: 35%;" 
         .row.collapse
-          .small-2.columns
-            %span.prefix
-              %i.fi-torso{style: "font-size: 2em;"}
-          .small-10.columns
-            = text_field_tag :name, nil, :placeholder => "Name", :required => true
-        .row.collapse
-          .small-2.columns
-            %span.prefix
-              %i.fi-telephone{style: "font-size: 2em;"}
-          .small-10.columns
-            = text_field_tag :phone, nil, :placeholder => "Telephone", :required => true
-        .row.collapse
-          .small-2.columns
-            %span.prefix
-              %i.fi-mail{style: "font-size: 2em;"}
-          .small-10.columns
-            = email_field_tag :email, nil, :placeholder => "Email", :required => true
-        .row.collapse
-          .small-2.columns
-            %span.prefix
-              %i.fi-page-edit{style: "font-size: 2em;"}
-          .small-10.columns
-            = text_area_tag :message, nil, :placeholder => "Details", :size => "24x6", :required => true
-        .row.collapse
-          .large-12.large-centered.columns
-            = submit_tag "CONTACT ME", :class => "button large", :style => "margin-left: 35%;" 
-      .row.collapse
-        %p.text-center
-          Already have an account?
+          %p.text-center
+            Already have an account?
           %a{href: "/sessions/new"} Login here &raquo
