@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       redirect_to new_user_path
     else
       flash[:notice] = "Your contact details were sent succesfully."
-      redirect_to new_user_path
+      redirect_to root_path
 		end
       
   end
