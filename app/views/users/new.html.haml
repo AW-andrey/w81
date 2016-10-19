@@ -10,43 +10,53 @@
       %h4{style: "padding-bottom: 30px;"} Alternatively, please provide your preferred contact details and we will reach out within 24 hours to help you. 
     .row
       .large-6.large-centered.columns
-        = form_tag('/users/create') do
+        = form_tag('/users/create', :data => {'abide' => true}, :novalidate => true) do
+          .alert.callout{style: 'display: none;', :data => {'abide-error' => true}}
+            %p
+              %i.fi-alert{style: "font-size: 2em;"}
+              Looks like you might have missed some information in the form below.
           .row.collapse
             .small-2.columns
               %span.prefix
                 %i.fi-torso{style: "font-size: 2em;"}
             .small-10.columns
               = text_field_tag :name, nil, :placeholder => "Name", :required => true
+              %span.form-error
+                Please provide your name.
           .row.collapse
             .small-2.columns
               %span.prefix
                 %i.fi-telephone{style: "font-size: 2em;"}
             .small-10.columns
-              = telephone_field_tag :phone, nil, :placeholder => "Telephone", :required => true
+              = telephone_field_tag :phone, nil, :placeholder => "Telephone", :required => true, :pattern => "tel"
+              %span.form-error
+                Please provide your valid telephone.
           .row.collapse
             .small-2.columns
               %span.prefix
                 %i.fi-mail{style: "font-size: 2em;"}
             .small-10.columns
-              = email_field_tag :email, nil, :placeholder => "Email", :required => true
+              = email_field_tag :email, nil, :placeholder => "Email", :required => true, :pattern => "email"
+              %span.form-error
+                Please provide your valid email.
           .row.collapse
             .small-2.columns
               %span.prefix
                 %i.fi-web{style: "font-size: 2em;"}
             .small-10.columns
-              = text_field_tag :country, nil, :placeholder => "Current country of residence", :required => true
+              = text_field_tag :country, nil, :placeholder => "Current country of residence"
           .row.collapse
             .small-2.columns
               %span.prefix
                 %i.fi-address-book{style: "font-size: 2em;"}
             .small-10.columns
-              = select_tag :contact, options_for_select([ "Email", "Phone" ]), :required => true, prompt: "Best method to contact"
+              = select_tag :contact, options_for_select([ "Email", "Phone" ]), prompt: "Best method to contact"
           .row.collapse
             .small-2.columns
               %span.prefix
                 %i.fi-page-edit{style: "font-size: 2em;"}
             .small-10.columns
-              = text_area_tag :message, nil, :placeholder => "Details", :size => "24x6", :required => true
+              = text_area_tag :message, nil, :placeholder => "Details", :size => "24x6"
           .row.collapse
             .large-12.large-centered.columns
               = submit_tag "CONTACT ME", :class => "button large", :style => "margin-left: 35%;" 

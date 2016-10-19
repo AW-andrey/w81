@@ -17,11 +17,11 @@ class UsersController < ApplicationController
           :merge_fields => {FNAME: name, PHONE: phone, MESSAGE: message, COUNTRY: country, CONTACT: contact }})
 
 		rescue Gibbon::MailChimpError => e
-      error = e.status_code == 214 ? "#{email} is already subscribed" : e.message
-  		flash[:error] = error
+  		flash[:error] = e.detail
+      puts e
       redirect_to new_user_path
     else
-      flash[:notice] = "Message sent succesfully"
+      flash[:notice] = "Your contact details were sent succesfully."
       redirect_to new_user_path
 		end
       
